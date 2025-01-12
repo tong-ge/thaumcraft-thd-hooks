@@ -1,0 +1,14 @@
+{
+  "package": "bruce.projectreflection.thdhooks.mixin",
+  "required": true,
+  "refmap": "mixins.thdhooks.refmap.json",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.8.5",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "MixinAspectEventProxy",
+    "MixinCommonInternals"
+  ],
+  "server": [],
+  "client": []
+}
