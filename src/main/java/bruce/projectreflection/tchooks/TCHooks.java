@@ -1,8 +1,9 @@
-package bruce.projectreflection.thdhooks;
+package bruce.projectreflection.tchooks;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,9 +18,10 @@ import java.util.stream.Collectors;
 
 @Mod(modid = Tags.MOD_ID, name = Tags.MOD_NAME, version = Tags.VERSION,
 dependencies = "required-after:mixinbooter;required-before:thaumcraft;")
-public class THDHooks implements ILateMixinLoader{
+public class TCHooks implements ILateMixinLoader{
 
     public static final Logger LOGGER = LogManager.getLogger(Tags.MOD_NAME);
+    public static boolean registryLocked=false;
 
     /**
      * <a href="https://cleanroommc.com/wiki/forge-mod-development/event#overview">
@@ -31,9 +33,13 @@ public class THDHooks implements ILateMixinLoader{
         //todo pre-initialization
     }
 
+    @Mod.EventHandler
+    public void postInit(FMLPostInitializationEvent event)
+    {
+    }
     @Override
     public List<String> getMixinConfigs() {
-        return Collections.singletonList("mixins.thdhooks.json");
+        return Collections.singletonList("mixins.tchooks.json");
     }
     public static void logRegisterTag(ItemStack stack, AspectList aspects,Throwable throwable)
     {

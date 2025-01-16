@@ -1,7 +1,7 @@
-package bruce.projectreflection.thdhooks.mixin;
+package bruce.projectreflection.tchooks.mixin;
 
-import bruce.projectreflection.thdhooks.ModConfig;
-import bruce.projectreflection.thdhooks.THDHooks;
+import bruce.projectreflection.tchooks.ModConfig;
+import bruce.projectreflection.tchooks.TCHooks;
 import net.minecraft.nbt.NBTTagCompound;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -15,10 +15,10 @@ public class MixinCommonInternals {
     {
         String original= nbt.toString();
         if(ModConfig.redirectForRetrieval) {
-            THDHooks.modifyNBT(nbt);
+            TCHooks.modifyNBT(nbt);
             String modified = nbt.toString();
             if (ModConfig.logRedirect && !modified.equals(original)) {
-                THDHooks.LOGGER.info("Stripping forge caps for reading:{} -> {}", original, modified);
+                TCHooks.LOGGER.info("Stripping forge caps for reading:{} -> {}", original, modified);
             }
             return modified;
         }

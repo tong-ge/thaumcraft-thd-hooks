@@ -160,6 +160,9 @@ dependencies {
     }
     implementation rfg.deobf("com.azanor.baubles:Baubles:1.12-1.5.2")
     implementation rfg.deobf("curse.maven:thaumcraft-223628:2629023")
+    implementation rfg.deobf("curse.maven:had-enough-items-557549:5906628")
+    implementation rfg.deobf("curse.maven:thaumic-jei-285492:5646810")
+    implementation rfg.deobf("curse.maven:distinct-damage-descriptions-403617:4048866")
 }
 
 apply from: 'gradle/scripts/dependencies.gradle'

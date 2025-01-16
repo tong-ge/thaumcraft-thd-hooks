@@ -1,5 +1,5 @@
 {
-  "package": "bruce.projectreflection.thdhooks.mixin",
+  "package": "bruce.projectreflection.tchooks.mixin",
   "required": true,
   "refmap": "mixins.thdhooks.refmap.json",
   "target": "@env(DEFAULT)",
@@ -7,7 +7,8 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "MixinAspectEventProxy",
-    "MixinCommonInternals"
+    "MixinCommonInternals",
+    "MixinThaumcraftCraftingManager"
   ],
   "server": [],
   "client": []
